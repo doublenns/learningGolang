@@ -11,7 +11,7 @@ multi-line Go comment
 */
 
 func main() {
-    var x string = "Whaddup "
+    x := "Whaddup "
     x += "doe!!"
     fmt.Println(x)
     fmt.Println("Hello World"[1])
