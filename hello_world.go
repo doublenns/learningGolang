@@ -11,7 +11,9 @@ multi-line Go comment
 */
 
 func main() {
-    fmt.Println("Whaddup doe!!")
+    var x string = "Whaddup "
+    x += "doe!!"
+    fmt.Println(x)
     fmt.Println("Hello World"[1])
-    os.Exit(1)
+    os.Exit(0)
 }
