@@ -4,14 +4,24 @@ import "fmt"
 
 func main() {
 
-    i := 1
-    for i <= 10 {
-        fmt.Println(i)
-        i += 1
+    for i:=1; i <= 5; i++ {
+        switch i{
+            case 1: fmt.Println("One")
+            case 2: fmt.Println("Two")
+            case 3: fmt.Println("Three")
+            case 4: fmt.Println("Four")
+            case 5: fmt.Println("Five")
+        }
     }
 
+    fmt.Println()
+
     for num := 1; num <= 10; num++ {
-        fmt.Println(num)
+        if num % 2 == 0 {
+            fmt.Println(num, "Even")
+        } else {
+            fmt.Println(num, "Odd")
+        }
     }
 
 }
