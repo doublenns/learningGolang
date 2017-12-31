@@ -14,6 +14,6 @@ func main() {
     x := "Whaddup "
     x += "doe!!"
     fmt.Println(x)
-    fmt.Println("Hello World"[1])
+    fmt.Println(x[1])
     os.Exit(0)
 }
