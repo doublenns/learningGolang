@@ -14,7 +14,13 @@ func main() {
     elements["N"] = "Nitrogen"
     elements["O"] = "Oxygen"
     elements["F"] = "Fluorine"
-    elements["Ne"] = "Neon" 
+    elements["Ne"] = "Neon"
 
     fmt.Println(elements["Li"])
+
+    if name, ok := elements["Un"]; ok {
+        fmt.Println(name, ok)
+    } else {
+        fmt.Println(`No element saved in map for "Un"`)
+    }
 }
