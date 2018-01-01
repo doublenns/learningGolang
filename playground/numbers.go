@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+
     var inputNums [2]float64
 
     fmt.Println("Please enter 2 numbers to both be doubled.")
@@ -16,7 +17,4 @@ func main() {
         fmt.Println(num * 2)
     }
 
-    //for i in (outputNum1, outputNum2) {
-    //    fmt.Println(i)
-    //}
 }
