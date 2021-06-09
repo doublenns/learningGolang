@@ -8,20 +8,19 @@ import (
 )
 
 // GetFloats reads a float64 from each line of a file
-func GetFloats(fileName string) ([3]float64, error) {
-	var numbers [3]float64 // Declare the array will be returning
+func GetFloats(fileName string) ([]float64, error) {
+	var numbers []float64 // Declare the slice to be returned
 	file, err := os.Open(fileName)
 	if err != nil {
 		return numbers, err
 	}
-	i := 0 // This var tra ks which array index should assign to
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		numbers[i], err = strconv.ParseFloat(scanner.Text(), 64) // Convert file line to float64
+		number, err = strconv.ParseFloat(scanner.Text(), 64) // Convert file line to float64
 		if err != nil {
 			return numbers, err
 		}
-		i++
+		numbers = append(numbers, number)
 	}
 	err := file.Close()
 	if err != nil {
