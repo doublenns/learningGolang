@@ -13,22 +13,34 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	var names []string // will hold slide of candidate names
-	var counts []int   // will hold slice w/ number of times each name occurs
+	counts := make(map[string]int)
 	for _, line := range lines {
-		matched := false
-		for i, name := range names {
-			if name == line {
-				counts[i]++
-				matched = true
-			}
-		}
-		if matched == false {
-			names = append(names, line)
-			counts = append(counts, 1)
-		}
+		counts[line]++
 	}
-	for i, name := range names {
-		fmt.Printf("%s: %d\n", name, counts[i])
-	}
+	fmt.Println(counts)
 }
+
+// func hardVersionUsingSlices() {
+// 	lines, err := datafile.GetStrings("votes.txt")
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	var names []string // will hold slide of candidate names
+// 	var counts []int   // will hold slice w/ number of times each name occurs
+// 	for _, line := range lines {
+// 		matched := false
+// 		for i, name := range names {
+// 			if name == line {
+// 				counts[i]++
+// 				matched = true
+// 			}
+// 		}
+// 		if matched == false {
+// 			names = append(names, line)
+// 			counts = append(counts, 1)
+// 		}
+// 	}
+// 	for i, name := range names {
+// 		fmt.Printf("%s: %d\n", name, counts[i])
+// 	}
+// }
