@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	readFileTest()
+
 	numbers, err := datafile.GetFloats("data.txt")
 	if err != nil {
 		log.Fatal(err)

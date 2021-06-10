@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func main() {
+func readFileTest() {
 	file, err := os.Open("data.txt") // Open the data file for reading
 	// If there was an error opening the file, report it and exit
 	if err != nil {
