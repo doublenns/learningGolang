@@ -21,4 +21,6 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(date)
+	// Below code causes an error because field are un-exported/protected
+	// date2 := calendar.Date{year: 2021, month: 2, day: 10}
 }
