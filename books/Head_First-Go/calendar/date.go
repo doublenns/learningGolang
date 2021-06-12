@@ -2,8 +2,6 @@ package calendar
 
 import (
 	"errors"
-	"fmt"
-	"log"
 )
 
 type Date struct {
@@ -34,19 +32,19 @@ func (d *Date) SetDay(day int) error {
 	return nil
 }
 
-func main() {
-	date := Date{}
-	err := date.SetYear(2019)
-	if err != nil {
-		log.Fatal(err)
-	}
-	err = date.SetMonth(5)
-	if err != nil {
-		log.Fatal(err)
-	}
-	err = date.SetDay(27)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(date)
-}
+// func main() {
+// 	date := Date{}
+// 	err := date.SetYear(2019)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	err = date.SetMonth(5)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	err = date.SetDay(27)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	fmt.Println(date)
+// }
