@@ -7,24 +7,26 @@ import (
 )
 
 func main() {
-	date := calendar.Date{}
-	err := date.SetYear(2019)
+	event := calendar.Event{}
+	err := event.SetYear(2019) // setter method for Date promoted to Event
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = date.SetMonth(5)
+	err = event.SetMonth(5)
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = date.SetDay(27)
+	err = event.SetDay(27)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(date)
-	fmt.Println(date.Year())
-	fmt.Println(date.Month())
-	fmt.Println(date.Day())
+	fmt.Println(event)
+	// Getter methods for Date promoted to Event
+	fmt.Println(event.Year())
+	fmt.Println(event.Month())
+	// Can use dot operator chaining to call methods on the Date value directly
+	fmt.Println(event.Date.Day())
 
-	// Below code causes an error because field are un-exported/protected
+	// Below code causes an error because Date struct fields are un-exported/protected
 	// date2 := calendar.Date{year: 2021, month: 2, day: 10}
 }
