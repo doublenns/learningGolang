@@ -8,7 +8,11 @@ import (
 
 func main() {
 	event := calendar.Event{}
-	err := event.SetYear(2019) // setter method for Date promoted to Event
+	err := event.SetTitle("Best friend's birthday")
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = event.SetYear(2019) // setter method for Date promoted to Event
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -20,7 +24,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(event)
+	fmt.Println(event.Title())
 	// Getter methods for Date promoted to Event
 	fmt.Println(event.Year())
 	fmt.Println(event.Month())
