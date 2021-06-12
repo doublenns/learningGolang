@@ -10,6 +10,18 @@ type Date struct {
 	day   int
 }
 
+// Getter methods
+func (d *Date) Year() int {
+	return d.year
+}
+func (d *Date) Month() int {
+	return d.month
+}
+func (d *Date) Day() int {
+	return d.day
+}
+
+// Setter methods
 func (d *Date) SetYear(year int) error {
 	if year < 1 {
 		return errors.New("invalid year")
