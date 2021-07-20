@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"net/http"
 	"strconv"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -38,7 +39,7 @@ func findOne(req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse,
 	id, err := strconv.Atoi(req.PathParameters["id"])
 	if err != nil {
 		return events.APIGatewayProxyResponse{
-			StatusCode: 500,
+			StatusCode: http.StatusInternalServerError,
 			Body:       "ID must be a number",
 		}, nil
 	}
@@ -46,7 +47,7 @@ func findOne(req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse,
 	response, err := json.Marshal(movies[id-1])
 	if err != nil {
 		return events.APIGatewayProxyResponse{
-			StatusCode: 500,
+			StatusCode: http.StatusInternalServerError,
 			Body:       err.Error(),
 		}, nil
 	}
